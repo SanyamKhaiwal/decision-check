@@ -1,0 +1,33 @@
+name: Bug report
+description: A wrong code claim, a skipped step, a bad trigger, or a broken report.
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What went wrong?
+      options:
+        - A claim about my code was wrong
+        - It skipped a step or a reference file
+        - It triggered when it shouldn't have (or didn't when it should)
+        - The report was incomplete or badly formatted
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: prompt
+    attributes:
+      label: What you asked
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected vs what happened
+      description: For a wrong claim, include the claim and what the code actually shows (file:line).
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model and Claude Code version

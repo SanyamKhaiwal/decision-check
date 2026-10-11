@@ -131,4 +131,8 @@ decision-check/
 └── benchmarks/       # test log
 ```
 
+## Contributing
+
+The most useful contribution is a real comparison: ask the same coding question with and without the skill and [share what happened](../../issues/new?template=share-comparison.yml), win or lose. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
 MIT License · see [LICENSE](LICENSE)

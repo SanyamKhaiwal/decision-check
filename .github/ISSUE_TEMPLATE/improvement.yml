@@ -1,0 +1,17 @@
+name: Improvement idea
+description: A new check, a better prompt, or a clearer report.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does it solve?
+      description: Ideally a real run where the skill missed something.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+    validations:
+      required: true

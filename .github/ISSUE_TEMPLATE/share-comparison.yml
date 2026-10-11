@@ -1,0 +1,40 @@
+name: Share a comparison
+description: Ran the same question with and without the skill? Share what happened, win or lose.
+labels: ["comparison"]
+body:
+  - type: input
+    id: repo
+    attributes:
+      label: Codebase
+      description: Language, rough size, and a public link if it's open source.
+      placeholder: "TypeScript monorepo, ~120k lines, github.com/org/repo"
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: The question you asked
+    validations:
+      required: true
+  - type: dropdown
+    id: result
+    attributes:
+      label: Which answer was better?
+      options:
+        - Decision Check
+        - Plain Claude Code
+        - About the same
+    validations:
+      required: true
+  - type: textarea
+    id: difference
+    attributes:
+      label: What made the difference?
+      description: A fact, a risk, a wrong claim, the plan. Paste the relevant parts of both answers if you can.
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model and Claude Code version
+      placeholder: "Opus, Claude Code 2.x"
