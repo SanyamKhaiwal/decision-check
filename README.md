@@ -2,6 +2,8 @@
 
 **A Claude Code skill for coding decisions: it reads your codebase, checks the facts, and tells you what will break before you build.**
 
+https://github.com/user-attachments/assets/a21c22df-fd50-4425-9b8c-0b6d5719424e
+
 > Inspired by [Andrej Karpathy's LLM Council](https://github.com/karpathy/llm-council).
 
 Ask Claude "how should we build this?" and you get a sensible plan. What it often misses is in your own code: who actually owns the state, which folder gets copied into every user install, the event nothing calls, the function a Blueprint depends on. Decision Check traces those things, has an independent reviewer re-check the code, and gives you a decision report with a rollout plan.
