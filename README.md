@@ -19,7 +19,7 @@ Real coding decisions on three real codebases: a UE5 C++ game (~10,500 lines), a
 | **Add an MCP server** to a design-data tool | Build it in Python as a separate package | Same choice, plus: **the repo has no way to publish to PyPI yet**, so `uvx` would serve stale data; the search engine finds its data by relative path (`core.py:15`), so the package must keep the folder layout. |
 | **Consolidate three copies** of the same scripts | Keep the existing sync script and CI check | Same choice, plus: **a fourth copy syncs the other way** (`sync-assets.mjs:22-28`) and the CI check doesn't watch it. |
 | **Scale real-time collaboration** to 3,000 concurrent editors (Outline) | Turn on Redis scaling and give collaboration its own Redis | Splitting the service and Redis are already config switches, but **Redis without routing each document to one server multiplies full-document saves**, and saving secretly uses the main Redis (`PersistenceExtension.ts:135`), so a dedicated Redis won't fix it. |
-| **Add an enterprise audit log** (Outline) | Extend the existing Event model | Same choice, plus: **most of it already exists**: an admin audit filter no UI calls (`events.ts:40-45`); views are missing from the audit list; retention deletes at most 100k rows an hour, which will fall behind once views are logged. |
+| **Add an enterprise audit log** (Outline) | Extend the existing Event model | Same choice, plus: **most of it already exists**: an admin audit filter no UI calls (`events.ts:40-45`); views are missing from the audit list; retention deletes at most 100k rows per run, which can fall behind once views are logged. |
 
 The direction was usually the same. What changed was the bug you'd have hit in week 3.
 
